@@ -49,7 +49,7 @@
     <object model="p_library.publisher" pk="6">
         <field name="name" type="CharField">Дрофа</field>
     </object>
-    <object model="p_library.publisher" pk="1">
+    <object model="p_library.publisher" pk="7">
         <field name="name" type="CharField">Мир книги</field>
     </object>
     
