@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+          integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt"
+          crossorigin="anonymous">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+	<title></title>
+</head>
+
+<body>
+  
+
+		<div class="display-4 text-center my-4">Добро пожаловать в {{ title }}  <br>
+            Тут собрано {{ books|length }} книг из моей личной коллекции.</div>
+    
+            <div class="container">
+                <nav class="navbar navbar-expand-lg justify-content-around">
+                    
+                      <button type="button" class="nav-item {% if request.path == book_url %} active {% endif %} btn btn-secondary">
+                      <a class="nav-link" style="color:white" href="{% url 'book' %}">Перейти к списку книг</a></button>
+
+                    
+                      <button type="button" class="nav-item {% if request.path == author_url %} active {% endif %} btn btn-secondary">
+                      <a class="nav-link" style="color:white" href="{% url 'author' %}">Перейти к списку авторов </a></button>
+
+                      <button type="button" class="nav-item {% if request.path == pubilisher_url %} active {% endif %} btn btn-secondary">
+                      <a class="nav-link" style="color:white" href="{% url 'publisher' %}">Перейти к списку издательств </a></button>
+
+                  </nav>
+                </div>
+</body>
+</html

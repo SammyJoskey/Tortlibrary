@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<link rel="stylesheet" type="text/css"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
+<body>
+    <h3 class="display-4 text-center my-4">Список книг</h3>
+    <div class="row">
+        <div class="col-md">
+            <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> </th>
+                <th> Название книги </th>
+                <th> ISBN </th>
+                <th> Описание </th>
+                <th> Год первого издания </th>
+                <th> Издательство </th>
+                <th> Автор </th>
+                <th> Страна </th>
+                <th> Количество копий </th>
+                <th> Увеличить/Уменьшить количество копий </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td style="font-size:18px"><strong>{{ book.title }}</strong></td>
+                <td>{{ book.ISBN }}</td> 
+                <td>{{ book.description }}</td>
+                <td>{{ book.year_release }}</td>
+                <td>{{ book.publisher }}</td>
+                <td>{{ book.author.full_name }}</td>
+                <td>{{ book.author.country }}</td>
+                <td>{{ book.copy_count }}</td>
+                <td>
+                    <form action="/index/book_increment/" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value="{{book.id}}" />
+                        <input type="submit" value="Увеличить кол-во" />
+                    </form>
+                        <form action="/index/book_decrement/" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value="{{book.id}}" />
+                        <input type="submit" value="Уменьшить кол-во" />
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object model="p_library.author" pk="1">
+        <field name="full_name" type="TextField">Виктор Олегович Пелевин</field>
+        <field name="birth_year" type="SmallIntegerField">1962</field>
+        <field name="country" type="CharField">RU</field>
+    </object>
+    <object model="p_library.author" pk="2">
+        <field name="full_name" type="TextField">Аркадий Натанович Стругацкий</field>
+        <field name="birth_year" type="SmallIntegerField">1933</field>
+        <field name="country" type="CharField">RU</field>
+    </object>
+    <object model="p_library.author" pk="3">
+        <field name="full_name" type="TextField">Федор Михайлович Достоевский</field>
+        <field name="birth_year" type="SmallIntegerField">1821</field>
+        <field name="country" type="CharField">RU</field>
+    </object>
+    <object model="p_library.author" pk="4">
+        <field name="full_name" type="TextField">Эрих Мария Ремарк</field>
+        <field name="birth_year" type="SmallIntegerField">1898</field>
+        <field name="country" type="CharField">DE</field>
+    </object>
+    <object model="p_library.author" pk="5">
+        <field name="full_name" type="TextField">Франц Кафка</field>
+        <field name="birth_year" type="SmallIntegerField">1883</field>
+        <field name="country" type="CharField">DE</field>
+    </object>
+    <object model="p_library.author" pk="6">
+        <field name="full_name" type="TextField">Дуглас Адамс</field>
+        <field name="birth_year" type="SmallIntegerField">1952</field>
+        <field name="country" type="CharField">US</field>
+    </object>
+
+    <object model="p_library.publisher" pk="1">
+        <field name="name" type="CharField">АСТ</field>
+    </object>
+    <object model="p_library.publisher" pk="2">
+        <field name="name" type="CharField">ЭКСМО</field>
+    </object>
+    <object model="p_library.publisher" pk="3">
+        <field name="name" type="CharField">Антология</field>
+    </object>
+     
+    <object model="p_library.book" pk="1">
+        <field name="ISBN" type="CharField">9785170923540</field>
+        <field name="title" type="TextField">Чапаев и Пустота</field>
+        <field name="description" type="TextField">Герой романа - поэт-декадент, красный комиссар и пациент психиатрической больницы Петр Пустота. Каждый раз, засыпая в дивизии своего командира Василия Чапаева, он просыпается в лечебнице для умалишенных. Петр убежден, что лечебница - плод его воображения. Однако Чапаев уверяет, что оба этих мира - нереальны, и Петру нужно всего лишь окончательно проснуться. Но как это сделать, если вместо реальности - сияющая пустота?</field>
+        <field name="year_release" type="SmallIntegerField">1996</field>
+        <field name="author" rel="ManyToOneRel" to="p_library.author">1</field>
+        <field name="copy_count" type="IntegerField">1</field>
+        <field name="price" type="DecimalField">250.00</field>
+        <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">1</field>
+    </object>
+    <object model="p_library.book" pk="2">
+        <field name="ISBN" type="CharField">9785171188609</field>
+        <field name="title" type="TextField">Пикник на обочине</field>
+        <field name="description" type="TextField">"Пикник на обочине" - одно из самых прославленных произведений братьев Стругацких, увлекательная история сталкеров - отчаянно смелых людей, на свой страх и риск снова и снова отправляющихся в место высадки пришельцев - аномальную Зону, полную опасностей и смертельных ловушек...</field>
+        <field name="year_release" type="SmallIntegerField">1972</field>
+        <field name="author" rel="ManyToOneRel" to="p_library.author">2</field>
+        <field name="copy_count" type="IntegerField">1</field>
+        <field name="price" type="DecimalField">250.00</field>
+        <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">1</field>
+    </object>
+    <object model="p_library.book" pk="3">
+        <field name="ISBN" type="CharField">9785171188658</field>
+        <field name="title" type="TextField">Град обреченный</field>
+        <field name="description" type="TextField">Главный герой, Андрей Воронин, попадает в Город, где действует всеобщее право на разнообразный труд. Он пробует себя в разных профессиях и оказывается в сложных, подчас противоречивых жизненных ситуациях. В чем же состоит предназначение загадочного Городского Эксперимента, сталкивающего друг с другом людей, выдернутых из разных временных пластов?</field>
+        <field name="year_release" type="SmallIntegerField">1988</field>
+        <field name="author" rel="ManyToOneRel" to="p_library.author">2</field>
+        <field name="copy_count" type="IntegerField">1</field>
+        <field name="price" type="DecimalField">250.00</field>
+        <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">1</field>
+    </object>
+    <object model="p_library.book" pk="4">
+        <field name="ISBN" type="CharField">9785171013110</field>
+        <field name="title" type="TextField">Превращение</field>
+        <field name="description" type="TextField">Главный герой рассказа Грегор Замза, простой коммивояжёр, проснувшись утром, обнаруживает, что превратился в огромное мерзкое насекомое. В свойственной Кафке манере причина метаморфозы, события, ей предшествующие, не раскрываются. Читатель, как и герои рассказа, просто поставлен перед фактом — превращение свершилось.</field>
+        <field name="year_release" type="SmallIntegerField">1915</field>
+        <field name="author" rel="ManyToOneRel" to="p_library.author">5</field>
+        <field name="copy_count" type="IntegerField">1</field>
+        <field name="price" type="DecimalField">150.00</field>
+        <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">1</field>
+    </object>
+    <object model="p_library.book" pk="5">
+        <field name="ISBN" type="CharField">9785040984350</field>
+        <field name="title" type="TextField">Тайные виды на гору Фудзи</field>
+        <field name="description" type="TextField">Эта книга - не только о проблемах российских стартапов. Это своего рода современная Илиада, повествующая о долгом и мучительно трудном возвращении российских олигархов домой. А еще это берущая за сердце история подлинного женского успеха. Впервые в мировой литературе раскрываются эзотерические тайны мезоамериканского феминизма с подробным описанием его энергетических практик.</field>
+        <field name="year_release" type="SmallIntegerField">2018</field>
+        <field name="author" rel="ManyToOneRel" to="p_library.author">1</field>
+        <field name="copy_count" type="IntegerField">1</field>
+        <field name="price" type="DecimalField">650.00</field>
+        <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">2</field>
+    </object>
+    <object model="p_library.book" pk="6">
+        <field name="ISBN" type="CharField">9785907097117</field>
+        <field name="title" type="TextField">The Hitchhiker's Guide to the Galaxy</field>
+        <field name="description" type="TextField">Однажды невезучий англичанин Артур Дент чудом спасается от неминуемой гибели благодаря своему другу Форду Префекту, оказавшемуся инопланетянином. Планета Земля стёрта с карты звёздного неба, и им ничего больше не остаётся, кроме как странствовать по галактике, отбиваясь от монстров полотенцем, попивая коктейль "Пангалактический грызлодёр" и оттягиваясь по полной. По счастливой случайности "Золотое сердце", недавно угнанный корабль на невероятностной тяге, подбирает Артура и Форда.</field>
+        <field name="year_release" type="SmallIntegerField">1979</field>
+        <field name="author" rel="ManyToOneRel" to="p_library.author">6</field>
+        <field name="copy_count" type="IntegerField">1</field>
+        <field name="price" type="DecimalField">200.00</field>
+        <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">3</field>
+    </object>
+    <object model="p_library.book" pk="7">
+        <field name="ISBN" type="CharField">9785170842241</field>
+        <field name="title" type="TextField">Черный обелиск</field>
+        <field name="description" type="TextField">Роман Эриха Марии Ремарка "Черный обелиск" переносит читателя в Германию, пытающуюся справиться с последствиями Первой мировой войны. Национальные проблемы здесь придают дополнительную глубину личной драме; вчерашний приятель оказывается врагом, а безнадежная любовь ускользает вместе с потерянным прошлым.</field>
+        <field name="year_release" type="SmallIntegerField">1956</field>
+        <field name="author" rel="ManyToOneRel" to="p_library.author">4</field>
+        <field name="copy_count" type="IntegerField">1</field>
+        <field name="price" type="DecimalField">250.00</field>
+        <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">1</field>
+    </object>
+    <object model="p_library.book" pk="8">
+        <field name="ISBN" type="CharField">9785699930166</field>
+        <field name="title" type="TextField">Преступление и наказание</field>
+        <field name="description" type="TextField">Роман "Преступление и наказание" Федора Михайловича Достоевского - одно из самых значимых произведений мировой литературы. На глазах у читателя молодой студент Родион Раскольников от нищеты и безысходности решается убить старуху-процентщицу. Но это преступление не приносит ничего, кроме мук, метаний и переживаний. Встречи с разными людьми, переплетение их судеб приводит героя к раскаянию и он сам требует наказания.</field>
+        <field name="year_release" type="SmallIntegerField">1866</field>
+        <field name="author" rel="ManyToOneRel" to="p_library.author">3</field>
+        <field name="copy_count" type="IntegerField">1</field>
+        <field name="price" type="DecimalField">150.00</field>
+        <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">2</field>
+    </object>
+    <object model="p_library.book" pk="9">
+    <field name="ISBN" type="CharField">9785170889402</field>
+    <field name="title" type="TextField">На западном фронте без перемен</field>
+    <field name="description" type="TextField">Это рассказ о немецких мальчишках, которые под действием патриотической пропаганды идут на войну, не зная о том, что впереди их ждет не слава героев, а инвалидность и смерть. Каждый день войны уносит жизни чьих-то отцов, сыновей, а газеты тем временем бесстрастно сообщают: "На Западном фронте без перемен...".</field>
+    <field name="year_release" type="SmallIntegerField">1929</field>
+    <field name="author" rel="ManyToOneRel" to="p_library.author">4</field>
+    <field name="copy_count" type="IntegerField">1</field>
+    <field name="price" type="DecimalField">200.00</field>
+    <field name="publisher" rel="ManyToOneRel" to="p_library.publisher">1</field>
+</object>
+</django-objects>
