@@ -35,11 +35,24 @@
         <field name="name" type="CharField">АСТ</field>
     </object>
     <object model="p_library.publisher" pk="2">
-        <field name="name" type="CharField">ЭКСМО</field>
+        <field name="name" type="CharField">Эксмо</field>
     </object>
     <object model="p_library.publisher" pk="3">
         <field name="name" type="CharField">Антология</field>
     </object>
+    <object model="p_library.publisher" pk="4">
+        <field name="name" type="CharField">Арка</field>
+    </object>
+    <object model="p_library.publisher" pk="5">
+        <field name="name" type="CharField">Литера</field>
+    </object>
+    <object model="p_library.publisher" pk="6">
+        <field name="name" type="CharField">Дрофа</field>
+    </object>
+    <object model="p_library.publisher" pk="1">
+        <field name="name" type="CharField">Мир книги</field>
+    </object>
+    
      
     <object model="p_library.book" pk="1">
         <field name="ISBN" type="CharField">9785170923540</field>
