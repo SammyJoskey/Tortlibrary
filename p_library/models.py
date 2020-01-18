@@ -23,4 +23,4 @@ class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name='Автор')
     copy_count = models.IntegerField(default=1, verbose_name='Страна автора')
     price = models.DecimalField(max_digits = 10, decimal_places=2, default=0, verbose_name='Цена')
-    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE, null=True, verbose_name='Издательство')
+    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE, null=True, blank=True, related_name='books', verbose_name='Издательство')
