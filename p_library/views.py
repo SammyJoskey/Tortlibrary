@@ -16,7 +16,7 @@ def home(request):
 
 def book_list(request):
     template = loader.get_template('book_list.html')
-    books = Book.objects.all()
+    books = Book.objects.all().order_by('title')
     biblio_data = {
         "title": "мою библиотеку",
         "books": books,
@@ -36,10 +36,10 @@ def publisher_list(request):
     template = loader.get_template('publisher_list.html')
     publisher = Publisher.objects.all().order_by('name')
 
-    biblio_data = {
-        "objects_list": publisher,
+    data = {
+        "publishers": publisher,
     }
-    return HttpResponse(template.render(biblio_data, request))
+    return HttpResponse(template.render(data, request))
 
 def book_increment(request):
     if request.method == 'POST':
